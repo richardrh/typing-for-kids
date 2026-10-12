@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#e1f5ef"/><stop offset="1" stop-color="#f9f8ed"/></linearGradient><linearGradient id="key" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#e6edf0"/></linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <circle cx="1080" cy="100" r="170" fill="#ffe28a"/>
+  <path d="M0 530Q230 430 480 560T1200 505V630H0Z" fill="#cce7c6"/>
+  <g font-family="Arial,Helvetica,sans-serif" fill="#173d36">
+    <text x="72" y="92" font-size="30" font-weight="700">Typing for Kids</text>
+    <text x="72" y="216" font-size="68" font-weight="700">Little fingers.</text>
+    <text x="72" y="298" font-size="68" font-weight="700">Big adventures.</text>
+    <text x="72" y="370" font-size="28">Free typing practice with animal friends.</text>
+    <rect x="72" y="419" width="240" height="68" rx="16" fill="#176449"/>
+    <text x="105" y="463" font-size="28" font-weight="700" fill="#fff">Start typing</text>
+  </g>
+  <g transform="translate(745 218) rotate(7 170 130)">
+    <rect x="0" y="12" width="370" height="270" rx="28" fill="#96b9b0"/>
+    <rect width="370" height="266" rx="28" fill="#dcece8" stroke="#bdd6cc" stroke-width="3"/>
+    <g fill="url(#key)" stroke="#9cb5b1" stroke-width="2"><rect x="24" y="28" width="94" height="82" rx="13"/><rect x="137" y="28" width="94" height="82" rx="13"/><rect x="250" y="28" width="94" height="82" rx="13"/><rect x="24" y="127" width="94" height="82" rx="13"/><rect x="137" y="127" width="94" height="82" rx="13"/><rect x="250" y="127" width="94" height="82" rx="13"/><rect x="103" y="224" width="165" height="24" rx="8"/></g>
+    <rect x="137" y="127" width="94" height="82" rx="13" fill="#267446"/>
+    <g font-family="Arial,Helvetica,sans-serif" font-size="44" font-weight="700" fill="#243343" text-anchor="middle"><text x="71" y="85">a</text><text x="184" y="85">b</text><text x="297" y="85">c</text><text x="71" y="184">d</text><text x="184" y="184" fill="#fff">e</text><text x="297" y="184">f</text></g>
+  </g>
+</svg>
