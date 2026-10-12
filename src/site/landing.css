@@ -177,8 +177,6 @@ h1 {
 
 .animal-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 15px; }
 .animal-card { grid-column: span 2; }
-.animal-card:nth-child(4) { grid-column: 2 / span 2; }
-.animal-card:nth-child(5) { grid-column: 4 / span 2; }
 .animal-card {
   display: flex;
   min-height: 166px;
@@ -202,6 +200,7 @@ h1 {
 .animal-card-turtle { background: #d7f2ed; border-color: #9cd6cb; }
 .animal-card-tiger { background: #fff0d8; border-color: #e7c694; }
 .animal-card-orca { background: #dceff8; border-color: #a6cfdf; }
+.animal-card-shark { background: #d9e8ec; border-color: #9db7c2; }
 
 .features-section { border-bottom: 1px solid var(--line); }
 .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 17px; }
@@ -285,9 +284,8 @@ details p { max-width: 620px; margin: -3px 0 21px; padding-right: 20px; color: v
   .section-heading h2, .final-cta h2 { font-size: 35px; }
   .feature-grid { grid-template-columns: 1fr; }
   .animal-grid { gap: 12px; grid-template-columns: repeat(2, 1fr); }
-  .animal-card, .animal-card:nth-child(4), .animal-card:nth-child(5) { min-height: 148px; grid-column: auto; }
+  .animal-card { min-height: 148px; grid-column: auto; }
   .animal-card img { width: 93px; height: 78px; }
-  .animal-card:last-child { grid-column: 1 / -1; }
   .feature-card { min-height: 0; padding: 22px; }
   .faq-section { display: block; }
   .faq-section .section-heading { margin-bottom: 28px; }

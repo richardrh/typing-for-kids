@@ -3,8 +3,9 @@ import unicorn from './assets/unicorn.svg'
 import turtle from './assets/turtle.svg'
 import tiger from './assets/tiger.svg'
 import orca from './assets/orca.svg'
+import shark from './assets/shark.svg'
 
-export type ThemeId = 'dinosaur' | 'unicorn' | 'turtle' | 'tiger' | 'orca'
+export type ThemeId = 'dinosaur' | 'unicorn' | 'turtle' | 'tiger' | 'orca' | 'shark'
 
 export interface Theme {
   id: ThemeId
@@ -13,11 +14,12 @@ export interface Theme {
 }
 
 export const themes: readonly Theme[] = [
-  { id: 'dinosaur', label: 'Dinosaur', asset: dinosaur },
+  { id: 'dinosaur', label: 'T-Rex', asset: dinosaur },
   { id: 'unicorn', label: 'Unicorn', asset: unicorn },
   { id: 'turtle', label: 'Turtle', asset: turtle },
   { id: 'tiger', label: 'Tiger', asset: tiger },
   { id: 'orca', label: 'Orca', asset: orca },
+  { id: 'shark', label: 'Shark', asset: shark },
 ]
 
 export function getTheme(id: string): Theme {

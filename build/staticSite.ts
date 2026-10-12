@@ -1,4 +1,5 @@
 import type { Plugin } from 'vite'
+import { deploymentConfig } from './deployment'
 
 export const SITE_TITLE = 'Typing for Kids — Free Typing Practice for Kids'
 export const SITE_DESCRIPTION = 'Free typing practice for kids with animal themes, easy words, keyboard lessons, and instant feedback. No account or subscription needed.'
@@ -53,19 +54,19 @@ function safeJson(value: unknown): string {
   return JSON.stringify(value).replace(/[<>&\u2028\u2029]/g, (character) => ({ '<': '\\u003C', '>': '\\u003E', '&': '\\u0026', '\u2028': '\\u2028', '\u2029': '\\u2029' })[character]!)
 }
 
-function headMarkup(origin: string | undefined, preview: boolean): string {
-  const canonical = origin ? `${origin}/` : undefined
-  const appUrl = origin ? `${origin}/app/` : undefined
+function headMarkup(origin: string | undefined, preview: boolean, base: string): string {
+  const canonical = origin ? `${origin}${base}` : undefined
+  const appUrl = canonical ? `${canonical}app/` : undefined
   const tags = [
     '<meta name="theme-color" content="#f3f8f5">',
-    '<link rel="icon" href="/favicon.svg" type="image/svg+xml">',
+    `<link rel="icon" href="${base}favicon.svg" type="image/svg+xml">`,
     preview ? '<meta name="robots" content="noindex,nofollow">' : '<meta name="robots" content="index,follow">',
   ]
 
   if (canonical) {
     const title = escapeHtml(SITE_TITLE)
     const description = escapeHtml(SITE_DESCRIPTION)
-    const image = `${origin}/social-card.png`
+    const image = `${origin}${base}social-card.png`
     tags.push(
       `<link rel="canonical" href="${escapeHtml(canonical)}">`,
       `<meta property="og:title" content="${title}">`,
@@ -98,28 +99,33 @@ export function staticSite(): Plugin {
   const context = env.CONTEXT
   const origin = getOrigin(env)
   const preview = context === 'deploy-preview' || context === 'branch-deploy'
+  const deployment = deploymentConfig(env)
 
   return {
     name: 'static-site-seo',
     transformIndexHtml: {
-      order: 'post',
+      order: 'pre',
       handler(html, ctx) {
-        if (ctx.path !== '/' && ctx.path !== '/index.html') return html
-        const injection = headMarkup(origin, preview)
-        return html.replace('</head>', `    ${injection}\n  </head>`)
+        const pagePath = ctx.path.startsWith(deployment.base)
+          ? ctx.path.slice(deployment.base.length) : ctx.path.replace(/^\//, '')
+        if (pagePath !== '' && pagePath !== 'index.html') return html
+        const content = html.replaceAll('%APP_URL%', deployment.appUrl).replaceAll('%SITE_ROOT%', deployment.base)
+        const injection = headMarkup(origin, preview, deployment.base)
+        return content.replace('</head>', `    ${injection}\n  </head>`)
       },
     },
     generateBundle() {
       const robots = preview
         ? 'User-agent: *\nDisallow: /\n'
-        : `User-agent: *\nAllow: /\n${origin ? `Sitemap: ${origin}/sitemap.xml\n` : ''}`
+        : `User-agent: *\nAllow: /\n${origin ? `Sitemap: ${origin}${deployment.base}sitemap.xml\n` : ''}`
       this.emitFile({ type: 'asset', fileName: 'robots.txt', source: robots })
+      this.emitFile({ type: 'asset', fileName: '.nojekyll', source: '' })
 
       if (origin) {
         this.emitFile({
           type: 'asset',
           fileName: 'sitemap.xml',
-          source: `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${escapeXml(`${origin}/`)}</loc></url></urlset>\n`,
+          source: `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${escapeXml(`${origin}${deployment.base}`)}</loc></url></urlset>\n`,
         })
       }
     },

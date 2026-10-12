@@ -1,0 +1,18 @@
+<svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="tyShell" x1="18" y1="23" x2="88" y2="78" gradientUnits="userSpaceOnUse"><stop stop-color="#9DDEA0"/><stop offset=".54" stop-color="#438F76"/><stop offset="1" stop-color="#24675F"/></linearGradient>
+<linearGradient id="tySkin" x1="72" y1="38" x2="108" y2="88" gradientUnits="userSpaceOnUse"><stop stop-color="#C9EDA5"/><stop offset="1" stop-color="#62B181"/></linearGradient>
+<linearGradient id="tyRidge" x1="35" y1="28" x2="76" y2="52" gradientUnits="userSpaceOnUse"><stop stop-color="#D5F0A6"/><stop offset="1" stop-color="#7FCA8A"/></linearGradient>
+</defs>
+<ellipse cx="60" cy="94" rx="46" ry="4" fill="#24685E" opacity=".22"/>
+<g stroke="#285E50" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round">
+<path d="m27 67-19 13 24 2 11-11M40 71l-8 19h20l6-18M68 71l7 19h21L83 66" fill="url(#tySkin)"/>
+<path d="M79 57Q85 34 101 39Q117 45 112 63L105 76H76Z" fill="url(#tySkin)"/>
+<path d="M18 70Q18 25 53 23Q87 23 91 69Q79 79 55 79Q31 79 18 70Z" fill="url(#tyShell)"/>
+<path d="M54 27v51M22 50h67M33 29l12 21-10 22m39-43L54 50l14 27m21-28L68 51l20 19" fill="none" stroke="#2A7063" stroke-width="2"/>
+<path d="M29 38Q43 26 59 29Q74 30 82 39" stroke="url(#tyRidge)" stroke-width="5"/>
+<path d="M35 34 39 41m17-11 1 10m18-6-5 8M29 58l8 2m44-3-8 3" stroke="#B8E69A" stroke-width="3"/>
+<path d="M18 69Q53 80 90 68" stroke="#D0E99C" stroke-width="6"/>
+<path d="m103 50 8 2m-8 7 7 2" stroke="#438E68" stroke-width="2"/>
+<circle cx="102" cy="48" r="3" fill="#243343" stroke="none"/><circle cx="103" cy="47" r="1" fill="white" stroke="none"/>
+</g></svg>

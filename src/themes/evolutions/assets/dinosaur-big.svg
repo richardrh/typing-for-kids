@@ -1,0 +1,31 @@
+<svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id="dinoBigBody" x1="12" y1="13" x2="98" y2="94" gradientUnits="userSpaceOnUse"><stop stop-color="#8ED777"/><stop offset=".46" stop-color="#438E5C"/><stop offset="1" stop-color="#1F4D43"/></linearGradient>
+ <linearGradient id="dinoBigHead" x1="72" y1="12" x2="114" y2="61" gradientUnits="userSpaceOnUse"><stop stop-color="#A9E486"/><stop offset="1" stop-color="#327052"/></linearGradient>
+ <linearGradient id="dinoBigBelly" x1="44" y1="46" x2="61" y2="88" gradientUnits="userSpaceOnUse"><stop stop-color="#E9F0A8"/><stop offset="1" stop-color="#83B969"/></linearGradient>
+</defs>
+<ellipse cx="56" cy="96" rx="53" ry="3.5" fill="#193E39" opacity=".28"/>
+<!-- sweeping adult tail -->
+<path d="M58 58C41 56 25 49 5 36L16 53L5 70C27 70 44 78 63 84L74 69Z" fill="#347A55" stroke="#1D493C" stroke-width="3.1" stroke-linejoin="round"/>
+<path d="M12 45C27 52 39 56 51 58" stroke="#73BE78" stroke-width="2.6" stroke-linecap="round" opacity=".7"/>
+<!-- huge muscular torso and powerful hindquarters -->
+<path d="M29 83C19 67 26 47 44 39C57 33 72 37 82 49C91 60 89 72 81 82L84 95H66L61 80H52L47 95H28L35 79Z" fill="url(#dinoBigBody)" stroke="#1D493C" stroke-width="3.1" stroke-linejoin="round"/>
+<path d="M49 45C60 53 66 67 64 81" stroke="#CFE99B" stroke-width="4.5" stroke-linecap="round" opacity=".82"/>
+<ellipse cx="43" cy="63" rx="13" ry="18" fill="url(#dinoBigBelly)" opacity=".82"/>
+<!-- tiny two-finger adult arms -->
+<path d="M76 46C81 49 84 54 82 60L78 66M78 66L70 69M78 66L85 70" stroke="#1D493C" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M76 47C79 50 80 53 79 57" stroke="#91D67D" stroke-width="2.4" stroke-linecap="round"/>
+<!-- massive block-shaped skull -->
+<path d="M70 31C70 19 79 11 91 10L108 12C116 14 119 20 117 30L115 40L119 44L113 52L87 54L77 49L70 43Z" fill="url(#dinoBigHead)" stroke="#1D493C" stroke-width="3.2" stroke-linejoin="round"/>
+<!-- enormous deep jaw -->
+<path d="M78 41L117 41L114 58C106 65 91 63 80 55L75 47Z" fill="#285C49" stroke="#1D493C" stroke-width="3.1" stroke-linejoin="round"/>
+<path d="M80 44L114 44" stroke="#142F2A" stroke-width="2.8" stroke-linecap="round"/>
+<!-- large unmistakable teeth -->
+<path d="M82 45L85 56L89 45L93 57L97 46L101 57L105 46L109 56L113 45" fill="#FFF4C5" stroke="#A78943" stroke-width="1.3" stroke-linejoin="round"/>
+<path d="M79 23C88 17 101 18 111 22" stroke="#D5F0A0" stroke-width="3.4" stroke-linecap="round" opacity=".8"/>
+<circle cx="105" cy="21" r="4" fill="#1A2E33"/><circle cx="106" cy="20" r="1.2" fill="white"/>
+<path d="M111 32L116 33" stroke="#255B43" stroke-width="2.4" stroke-linecap="round"/>
+<!-- muscular scale accents -->
+<path d="M33 56l5-2m-7 10 5-2m5-19 5-2m5 43-3 5m20-7 4 6" stroke="#6EB873" stroke-width="2.3" stroke-linecap="round" opacity=".8"/>
+<path d="M32 92L28 95M72 92L76 95" stroke="#F4D788" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

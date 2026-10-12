@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" fill="none">
+  <defs><linearGradient id="shark-big-body" x1="35" y1="27" x2="73" y2="83" gradientUnits="userSpaceOnUse"><stop stop-color="#c4d7e2"/><stop offset=".6" stop-color="#5d839b"/><stop offset="1" stop-color="#1e435d"/></linearGradient></defs>
+  <ellipse cx="63" cy="95" rx="45" ry="3" fill="#2d5168" opacity=".18"/>
+  <path d="M4 52 25 33Q48 21 74 38L79 5 89 41 99 48 116 25 111 57 118 81 93 68Q66 94 29 82L12 68Z" fill="url(#shark-big-body)" stroke="#294a5e" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M15 70Q48 85 94 66L85 79Q56 97 29 82Z" fill="#edf6f8"/>
+  <path d="M63 63  40 95 83 73Z" fill="#5d839b" stroke="#294a5e" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M8 58Q34 46 61 61Q47 91 15 75Z" fill="#163244" stroke="#294a5e" stroke-width="1.5"/>
+  <path d="M13 60l6 0-3 10Z" fill="#fff9e8"/><path d="M21 60l6 0-3 10Z" fill="#fff9e8"/><path d="M29 60l6 0-3 10Z" fill="#fff9e8"/><path d="M37 60l6 0-3 10Z" fill="#fff9e8"/><path d="M45 60l6 0-3 10Z" fill="#fff9e8"/><path d="M24 78l6-1-4-7Z" fill="#fff9e8"/><path d="M32 78l6-1-4-7Z" fill="#fff9e8"/><path d="M40 78l6-1-4-7Z" fill="#fff9e8"/>
+  <path d="m64 49-3 12m8-11-3 12m8-10-3 11" stroke="#294a5e" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="28" cy="40" r="3.3" fill="#112736"/><circle cx="28.8" cy="39.1" r="1" fill="white"/>
+  <path d="m23 35 10 2" stroke="#294a5e" stroke-width="2" stroke-linecap="round"/>
+  <path d="M35 40q12-5 23-2" stroke="white" stroke-width="2.5" opacity=".65" stroke-linecap="round"/>
+  
+</svg>

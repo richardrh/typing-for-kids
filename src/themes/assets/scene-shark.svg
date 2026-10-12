@@ -1,0 +1,20 @@
+<svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id="sharkSea" x1="0" y1="0" x2="0" y2="700" gradientUnits="userSpaceOnUse"><stop stop-color="#B5EFF5"/><stop offset=".48" stop-color="#4CA8C8"/><stop offset="1" stop-color="#125681"/></linearGradient>
+ <linearGradient id="reefSand" x1="0" y1="550" x2="0" y2="700" gradientUnits="userSpaceOnUse"><stop stop-color="#DCCB9A"/><stop offset="1" stop-color="#A99772"/></linearGradient>
+</defs>
+<path fill="url(#sharkSea)" d="M0 0h1200v700H0z"/>
+<!-- soft surface light and underwater rays -->
+<path fill="#F5FFFF" opacity=".28" d="M70 0h120l190 520h-95zm285 0h72l70 500h-58zm310 0h125l-38 520h-82zm310 0h74l-152 530h-78z"/>
+<circle cx="982" cy="108" r="69" fill="#FFF3B1" opacity=".76"/>
+<path fill="#277FA8" opacity=".55" d="M0 374q145-122 300 0t310 0q156-122 316 0t274-4v330H0z"/>
+<path fill="#155E8A" d="M0 500q160-96 320 0t320 0q160-96 320 0t240-2v202H0z"/>
+<path fill="url(#reefSand)" d="M0 624q160-42 320 0t320 0q160-42 320 0t240-2v78H0z"/>
+<!-- reef silhouettes -->
+<g fill="#E57E73"><path d="M120 625q-5-80 31-124 18 51 11 124Z"/><path d="M148 551l58-53-37 73Z"/><path d="M1040 631q-4-92 34-139 18 54 12 139Z"/><path d="m1072 538 61-55-39 75Z"/></g>
+<g fill="#E9B45E"><path d="M300 645q-6-104 24-151 25 61 18 151Z"/><path d="m319 560 57-62-38 82Z"/><path d="M887 644q-5-98 27-143 24 59 17 143Z"/><path d="m907 548 53-58-34 78Z"/></g>
+<g fill="#4CBA9B"><path d="M205 630q-7-90 19-130 27 56 19 130Z"/><path d="m222 548 48-48-30 67Z"/><path d="M1130 645q-5-74 22-118 21 55 14 118Z"/></g>
+<!-- bubbles and currents -->
+<g fill="none" stroke="#D9FAFF" stroke-width="11" stroke-linecap="round" opacity=".72"><path d="M72 420q58-38 116 0t116 0"/><path d="M713 393q58-38 116 0t116 0"/><path d="M360 548q54-34 108 0t108 0"/><path d="M905 532q48-31 96 0t96 0"/></g>
+<g fill="none" stroke="#E7FCFF" stroke-width="5" opacity=".85"><circle cx="245" cy="260" r="10"/><circle cx="273" cy="219" r="6"/><circle cx="1045" cy="294" r="9"/><circle cx="1070" cy="255" r="5"/></g>
+</svg>

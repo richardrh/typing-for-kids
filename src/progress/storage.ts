@@ -1,10 +1,15 @@
 import { getLesson } from '../lessons/catalog'
 import type { Lesson } from '../lessons/types'
+import { loadTheme, themes, type ThemeId } from '../themes/catalog'
 
-export interface Progress {
-  version: 1
+export interface AnimalProgress {
   completed: string[]
   best: Record<string, number>
+}
+
+export interface Progress {
+  version: 2
+  animals: Record<ThemeId, AnimalProgress>
 }
 
 export interface TypingSession {
@@ -22,8 +27,17 @@ export const PROGRESS_STORAGE_KEY = 'little-keys-progress'
 export const SESSION_STORAGE_KEY = 'little-keys-session'
 export const SOUND_PREFERENCE_KEY = 'little-keys-sound'
 
-const emptyProgress = (): Progress => ({ version: 1, completed: [], best: {} })
-
+const emptyProgress = (): Progress => ({
+  version: 2,
+  animals: {
+    dinosaur: { completed: [], best: {} },
+    unicorn: { completed: [], best: {} },
+    turtle: { completed: [], best: {} },
+    tiger: { completed: [], best: {} },
+    orca: { completed: [], best: {} },
+    shark: { completed: [], best: {} },
+  },
+})
 
 function storage(kind: 'localStorage' | 'sessionStorage'): Storage | undefined {
   try {
@@ -58,41 +72,78 @@ function clearStored(kind: 'localStorage' | 'sessionStorage', key: string): void
   }
 }
 
-function sanitiseProgress(value: unknown): Progress {
-  if (!value || typeof value !== 'object') return emptyProgress()
-  const candidate = value as Record<string, unknown>
-  // Version-less records are the format used by the original application and
-  // are intentionally accepted as a one-time migration.
-  if (candidate.version !== undefined && candidate.version !== 1) return emptyProgress()
+function isThemeId(value: string): value is ThemeId {
+  return themes.some(theme => theme.id === value)
+}
 
+function sanitiseAnimal(value: unknown): AnimalProgress {
+  if (!value || typeof value !== 'object') return { completed: [], best: {} }
+  const candidate = value as Record<string, unknown>
   const completed = Array.isArray(candidate.completed)
     ? [...new Set(candidate.completed.filter((id): id is string => typeof id === 'string' && !!getLesson(id)))]
     : []
-  const bestValue = candidate.best
   const best: Record<string, number> = {}
-  if (bestValue && typeof bestValue === 'object') {
-    for (const [id, score] of Object.entries(bestValue)) {
+  if (candidate.best && typeof candidate.best === 'object') {
+    for (const [id, score] of Object.entries(candidate.best)) {
       if (getLesson(id) && typeof score === 'number' && Number.isFinite(score) && score >= 0 && score <= 100) {
         best[id] = score
       }
     }
   }
-  return { version: 1, completed, best }
+  return { completed, best }
+}
+
+function sanitiseProgress(value: unknown): Progress {
+  if (!value || typeof value !== 'object') return emptyProgress()
+  const candidate = value as Record<string, unknown>
+  if (candidate.version !== 2 || !candidate.animals || typeof candidate.animals !== 'object') return emptyProgress()
+
+  const progress = emptyProgress()
+  const animals = candidate.animals as Record<string, unknown>
+  for (const theme of themes) {
+    progress.animals[theme.id] = sanitiseAnimal(animals[theme.id])
+  }
+  return progress
+}
+
+function migrateLegacyProgress(value: unknown): Progress | null {
+  if (!value || typeof value !== 'object') return null
+  const candidate = value as Record<string, unknown>
+  if (candidate.version !== undefined && candidate.version !== 1) return null
+
+  const progress = emptyProgress()
+  const theme = loadTheme()
+  const animal = sanitiseAnimal({ completed: candidate.completed, best: candidate.best })
+  progress.animals[theme] = animal
+  return progress
 }
 
 export function loadProgress(): Progress {
-  return sanitiseProgress(readJson('localStorage', PROGRESS_STORAGE_KEY))
+  const raw = readJson('localStorage', PROGRESS_STORAGE_KEY)
+  const migrated = migrateLegacyProgress(raw)
+  if (migrated) {
+    writeJson('localStorage', PROGRESS_STORAGE_KEY, migrated)
+    return migrated
+  }
+  return sanitiseProgress(raw)
 }
 
-export function recordCompletion(lessonId: string, accuracy: number): Progress {
+export function recordCompletion(theme: ThemeId, lessonId: string, accuracy: number): Progress {
   const progress = loadProgress()
-  if (!getLesson(lessonId) || !Number.isFinite(accuracy)) return progress
-  const score = Math.max(0, Math.min(100, Math.round(accuracy)))
-  const best = progress.best[lessonId]
+  if (!isThemeId(theme) || !getLesson(lessonId) || !Number.isFinite(accuracy) || accuracy < 0 || accuracy > 100) {
+    return progress
+  }
+
+  const animal = progress.animals[theme]
+  const score = Math.round(accuracy)
+  const best = animal.best[lessonId]
+  const nextAnimal: AnimalProgress = {
+    completed: animal.completed.includes(lessonId) ? [...animal.completed] : [...animal.completed, lessonId],
+    best: { ...animal.best, [lessonId]: typeof best === 'number' ? Math.max(best, score) : score },
+  }
   const next: Progress = {
-    version: 1,
-    completed: progress.completed.includes(lessonId) ? progress.completed : [...progress.completed, lessonId],
-    best: { ...progress.best, [lessonId]: typeof best === 'number' ? Math.max(best, score) : score },
+    version: 2,
+    animals: { ...progress.animals, [theme]: nextAnimal },
   }
   writeJson('localStorage', PROGRESS_STORAGE_KEY, next)
   return next

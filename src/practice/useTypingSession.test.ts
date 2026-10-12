@@ -4,7 +4,14 @@ import { createApp, nextTick, type App } from 'vue'
 import { insertedCharacters, useTypingSession, type TypingSessionController } from './useTypingSession'
 import type { Lesson } from '../lessons/types'
 
-const lesson: Lesson = { id: 'test', title: 'Test', text: 'ab', fingerHint: '' }
+const lesson: Lesson = {
+  id: 'test',
+  title: 'Test',
+  text: 'ab',
+  fingerHint: '',
+  categoryId: 'home-row',
+  allowedCharacters: 'ab ',
+}
 const apps: App[] = []
 
 function mountSession(target: Lesson) {

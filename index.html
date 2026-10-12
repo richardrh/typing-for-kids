@@ -10,24 +10,24 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
-      <a class="brand" href="/" aria-label="Typing for Kids home">
+      <a class="brand" href="%SITE_ROOT%" aria-label="Typing for Kids home">
         <img class="brand-mark" src="/favicon.svg" width="34" height="34" alt="" />
         <span>Typing for Kids</span>
       </a>
       <nav class="primary-nav" aria-label="Primary navigation">
         <a href="#animals">Animals</a>
         <a href="#faq">FAQ</a>
-        <a class="nav-cta" href="/app/">Start typing</a>
+        <a class="nav-cta" href="%APP_URL%">Start typing</a>
       </nav>
     </header>
 
     <main id="main-content">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <h1 id="hero-title">Learn to type with animal friends.</h1>
-          <p class="hero-lede">Free keyboard lessons, easy words, and short sentences. Pick an animal and start typing—no account needed.</p>
+          <h1 id="hero-title">Choose your animal and watch it evolve.</h1>
+          <p class="hero-lede">Practice typing to unlock new forms and powers. Free lessons, no account needed.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="/app/">Start typing</a>
+            <a class="button button-primary" href="%APP_URL%">Start typing</a>
             <a class="button button-secondary" href="#animals">Choose your animal</a>
           </div>
           <p class="hero-note">All lessons free. Progress saved on your device.</p>
@@ -36,25 +36,29 @@
         <section class="hero-animals" id="animals" aria-labelledby="animals-title">
           <h2 id="animals-title">Choose your animal</h2>
           <div class="animal-grid">
-            <a class="animal-card animal-card-dinosaur" href="/app/lessons/easy-animal-words?theme=dinosaur">
+            <a class="animal-card animal-card-dinosaur" href="%APP_URL%lessons/easy-animal-words?theme=dinosaur">
               <img src="/src/themes/assets/dinosaur.svg" width="120" height="100" alt="" decoding="async" />
-              <span>Dinosaur</span>
+              <span>T-Rex</span>
             </a>
-            <a class="animal-card animal-card-unicorn" href="/app/lessons/easy-animal-words?theme=unicorn">
+            <a class="animal-card animal-card-unicorn" href="%APP_URL%lessons/easy-animal-words?theme=unicorn">
               <img src="/src/themes/assets/unicorn.svg" width="120" height="100" alt="" decoding="async" />
               <span>Unicorn</span>
             </a>
-            <a class="animal-card animal-card-turtle" href="/app/lessons/easy-animal-words?theme=turtle">
+            <a class="animal-card animal-card-turtle" href="%APP_URL%lessons/easy-animal-words?theme=turtle">
               <img src="/src/themes/assets/turtle.svg" width="120" height="100" alt="" decoding="async" />
               <span>Turtle</span>
             </a>
-            <a class="animal-card animal-card-tiger" href="/app/lessons/easy-animal-words?theme=tiger">
+            <a class="animal-card animal-card-tiger" href="%APP_URL%lessons/easy-animal-words?theme=tiger">
               <img src="/src/themes/assets/tiger.svg" width="120" height="100" alt="" decoding="async" />
               <span>Tiger</span>
             </a>
-            <a class="animal-card animal-card-orca" href="/app/lessons/easy-animal-words?theme=orca">
+            <a class="animal-card animal-card-orca" href="%APP_URL%lessons/easy-animal-words?theme=orca">
               <img src="/src/themes/assets/orca.svg" width="120" height="100" alt="" decoding="async" />
               <span>Orca</span>
+            </a>
+            <a class="animal-card animal-card-shark" href="%APP_URL%lessons/easy-animal-words?theme=shark">
+              <img src="/src/themes/assets/shark.svg" width="120" height="100" alt="" decoding="async" />
+              <span>Shark</span>
             </a>
           </div>
         </section>
@@ -113,19 +117,19 @@
           <h2 id="final-title">Pick an animal. Start typing.</h2>
           <p>No download, account, or subscription.</p>
         </div>
-        <a class="button button-primary" href="/app/">Start typing</a>
+        <a class="button button-primary" href="%APP_URL%">Start typing</a>
       </section>
     </main>
 
     <footer class="site-footer">
-      <a class="brand" href="/" aria-label="Typing for Kids home">
+      <a class="brand" href="%SITE_ROOT%" aria-label="Typing for Kids home">
         <img class="brand-mark" src="/favicon.svg" width="34" height="34" alt="" />
         <span>Typing for Kids</span>
       </a>
       <nav aria-label="Footer navigation">
         <a href="#animals">Animals</a>
         <a href="#faq">FAQ</a>
-        <a href="/app/">Start typing</a>
+        <a href="%APP_URL%">Start typing</a>
       </nav>
     </footer>
   </body>

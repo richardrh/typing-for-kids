@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" fill="none">
+  <defs>
+    <linearGradient id="megalodon-body" x1="32" y1="20" x2="77" y2="89" gradientUnits="userSpaceOnUse"><stop stop-color="#dae7ed"/><stop offset=".5" stop-color="#7b98aa"/><stop offset="1" stop-color="#294a61"/></linearGradient>
+    <linearGradient id="megalodon-fin" x1="65" y1="63" x2="49" y2="97" gradientUnits="userSpaceOnUse"><stop stop-color="#b2c9d6"/><stop offset="1" stop-color="#446b84"/></linearGradient>
+    <clipPath id="megalodon-jaw"><path d="M6 50Q33 36 71 53Q61 81 25 86L9 70Z"/></clipPath>
+  </defs>
+  <ellipse cx="64" cy="97" rx="46" ry="2.5" fill="#23475c" opacity=".2"/>
+  <path d="M3 44 27 24Q50 14 76 34L84 4 95 39 103 43 117 20 112 57 118 85 94 72Q65 97 26 87L9 72Z" fill="url(#megalodon-body)" stroke="#253e50" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M12 66Q51 90 94 68L86 80Q58 101 26 87Z" fill="#e8f2f5"/>
+  <path d="M66 65 40 96 89 76Z" fill="url(#megalodon-fin)" stroke="#253e50" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M6 50Q33 36 71 53Q61 81 25 86L9 70Z" fill="#112a3c" stroke="#253e50" stroke-width="2"/>
+  <g clip-path="url(#megalodon-jaw)" fill="#fff9e9" stroke="#cad5d6" stroke-width=".6">
+    <path d="m10 50 9-2-3 18Zm11-3 9-1-3 20Zm11-1 9 1-5 20Zm11 1 9 2-6 21Zm11 2 9 3-8 19Z"/>
+    <path d="m21 85 10 0-6-16Zm12-1 11-2-8-16Zm13-4 11-5-10-13Z"/>
+  </g>
+  <path d="m76 49-5 17m12-15-5 16m12-13-5 14" stroke="#2c4b5e" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="30" cy="36" r="3.5" fill="#102735"/><circle cx="31" cy="35" r="1.1" fill="white"/>
+  <path d="m23 29 15 4" stroke="#253e50" stroke-width="3" stroke-linecap="round"/>
+  <path d="M39 29q13-4 24 2" stroke="white" stroke-width="3" opacity=".7" stroke-linecap="round"/>
+  <path d="m85 15 7 24m16 11 7-20" stroke="#c0e4ec" stroke-width="2" opacity=".75" stroke-linecap="round"/>
+</svg>

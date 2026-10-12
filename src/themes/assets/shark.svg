@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" fill="none">
+  <defs><linearGradient id="shark-baby-body" x1="35" y1="27" x2="73" y2="83" gradientUnits="userSpaceOnUse"><stop stop-color="#d9e3e8"/><stop offset=".6" stop-color="#849eaf"/><stop offset="1" stop-color="#527086"/></linearGradient></defs>
+  <ellipse cx="63" cy="95" rx="45" ry="3" fill="#2d5168" opacity=".18"/>
+  <path d="M7 57 29 43Q46 31 65 40L71 18 78 43Q87 46 97 52L113 37 108 56 116 72 94 65Q66 84 36 75L19 66Z" fill="url(#shark-baby-body)" stroke="#294a5e" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M18 63Q49 77 94 63L91 70Q 64 86 36 75Z" fill="#edf6f8"/>
+  <path d="M58 63 49 86 75 69Z" fill="#849eaf" stroke="#294a5e" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M13 59Q28 56 43 63Q30 70 17 64Z" fill="#163244" stroke="#294a5e" stroke-width="1.5"/>
+  <path d="M20 61l6 0-3 4Z" fill="#fff9e8"/><path d="M28 61l6 0-3 4Z" fill="#fff9e8"/>
+  <path d="m46 49-3 12m8-11-3 12m8-10-3 11" stroke="#294a5e" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="29" cy="49" r="3.3" fill="#112736"/><circle cx="29.8" cy="48.1" r="1" fill="white"/>
+  <path d="m24 44 10 2" stroke="#294a5e" stroke-width="2" stroke-linecap="round"/>
+  <path d="M35 40q12-5 23-2" stroke="white" stroke-width="2.5" opacity=".65" stroke-linecap="round"/>
+  
+</svg>

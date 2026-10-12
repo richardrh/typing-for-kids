@@ -2,15 +2,19 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig, type Plugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { staticSite } from './build/staticSite'
+import { deploymentConfig } from './build/deployment'
+
+const deployment = deploymentConfig()
 
 // Match Netlify's /app/* history fallback in local dev and production preview.
-function appHistoryFallback(): Plugin {
+function appHistoryFallback(base: string): Plugin {
   const install = (server: { middlewares: { use: (handler: (req: { url?: string; headers: { accept?: string } }, res: unknown, next: () => void) => void) => void } }) => {
     server.middlewares.use((req, _res, next) => {
       const pathname = req.url?.split('?')[0] ?? ''
-      if ((pathname === '/app' || pathname.startsWith('/app/')) &&
+      const appPath = `${base}app`
+      if ((pathname === appPath || pathname.startsWith(`${appPath}/`)) &&
           !pathname.split('/').pop()?.includes('.') && req.headers.accept?.includes('text/html')) {
-        req.url = '/app/index.html'
+        req.url = `${appPath}/index.html`
       }
       next()
     })
@@ -20,7 +24,8 @@ function appHistoryFallback(): Plugin {
 
 export default defineConfig({
   appType: 'mpa',
-  plugins: [vue(), appHistoryFallback(), staticSite()],
+  base: deployment.base,
+  plugins: [vue(), appHistoryFallback(deployment.base), staticSite()],
   build: {
     rollupOptions: {
       input: {

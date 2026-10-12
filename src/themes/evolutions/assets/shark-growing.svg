@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" fill="none">
+  <defs><linearGradient id="shark-growing-body" x1="35" y1="27" x2="73" y2="83" gradientUnits="userSpaceOnUse"><stop stop-color="#c5d7e1"/><stop offset=".6" stop-color="#6c92aa"/><stop offset="1" stop-color="#254e69"/></linearGradient></defs>
+  <ellipse cx="63" cy="95" rx="45" ry="3" fill="#2d5168" opacity=".18"/>
+  <path d="M5 54 27 37Q49 25 70 39L76 8 85 42 99 50 116 29 110 57 118 78 93 67Q66 90 31 79L14 67Z" fill="url(#shark-growing-body)" stroke="#294a5e" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M16 67Q52 82 94 65L88 76Q58 93 31 79Z" fill="#edf6f8"/>
+  <path d="M59 64 42 94 79 72Z" fill="#6c92aa" stroke="#294a5e" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M10 59Q32 48 57 62Q 40 88 16 70Z" fill="#163244" stroke="#294a5e" stroke-width="1.5"/>
+  <path d="M16 61l6 0-3 8Z" fill="#fff9e8"/><path d="M24 61l6 0-3 8Z" fill="#fff9e8"/><path d="M32 61l6 0-3 8Z" fill="#fff9e8"/><path d="M40 61l6 0-3 8Z" fill="#fff9e8"/><path d="M24 78l6-1-4-7Z" fill="#fff9e8"/><path d="M32 78l6-1-4-7Z" fill="#fff9e8"/><path d="M40 78l6-1-4-7Z" fill="#fff9e8"/>
+  <path d="m57 49-3 12m8-11-3 12m8-10-3 11" stroke="#294a5e" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="29" cy="44" r="3.3" fill="#112736"/><circle cx="29.8" cy="43.1" r="1" fill="white"/>
+  <path d="m24 39 10 2" stroke="#294a5e" stroke-width="2" stroke-linecap="round"/>
+  <path d="M35 40q12-5 23-2" stroke="white" stroke-width="2.5" opacity=".65" stroke-linecap="round"/>
+  
+</svg>

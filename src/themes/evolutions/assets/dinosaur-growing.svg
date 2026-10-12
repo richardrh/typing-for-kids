@@ -1,0 +1,30 @@
+<svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id="dinoGrowingBody" x1="17" y1="16" x2="94" y2="94" gradientUnits="userSpaceOnUse"><stop stop-color="#9DDE79"/><stop offset=".48" stop-color="#4F9F61"/><stop offset="1" stop-color="#265844"/></linearGradient>
+ <linearGradient id="dinoGrowingHead" x1="72" y1="14" x2="112" y2="58" gradientUnits="userSpaceOnUse"><stop stop-color="#B9EC8B"/><stop offset="1" stop-color="#3E8156"/></linearGradient>
+ <linearGradient id="dinoGrowingBelly" x1="43" y1="48" x2="62" y2="88" gradientUnits="userSpaceOnUse"><stop stop-color="#F2F4B2"/><stop offset="1" stop-color="#9FC56D"/></linearGradient>
+</defs>
+<ellipse cx="57" cy="96" rx="51" ry="3.6" fill="#204A37" opacity=".24"/>
+<!-- long, low tail with a tapered tip -->
+<path d="M52 59C38 57 25 51 6 40L16 56L6 69C25 69 40 76 58 81L67 69Z" fill="#3E8657" stroke="#204D38" stroke-width="3" stroke-linejoin="round"/>
+<path d="M12 48C23 54 32 57 42 59" stroke="#79C779" stroke-width="2.4" stroke-linecap="round" opacity=".7"/>
+<!-- growing muscular body, raised hips and planted hind legs -->
+<path d="M31 82C22 68 27 49 43 42C54 37 68 40 77 51C84 60 84 70 78 80L80 94H64L60 80H52L47 94H31L37 79Z" fill="url(#dinoGrowingBody)" stroke="#204D38" stroke-width="3" stroke-linejoin="round"/>
+<path d="M48 48C58 55 63 68 62 81" stroke="#DDF1A0" stroke-width="4.2" stroke-linecap="round" opacity=".82"/>
+<ellipse cx="44" cy="64" rx="12" ry="17" fill="url(#dinoGrowingBelly)" opacity=".86"/>
+<!-- short but visible two-finger arms -->
+<path d="M72 48C77 51 80 56 78 62L74 67M74 67L67 70M74 67L81 70" stroke="#204D38" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M72 49C75 52 76 55 75 59" stroke="#A7DD7C" stroke-width="2.3" stroke-linecap="round"/>
+<!-- blocky growing skull -->
+<path d="M69 32C69 21 78 14 89 13L107 15C114 16 117 22 115 31L113 40L117 44L111 51L87 52L77 48L69 43Z" fill="url(#dinoGrowingHead)" stroke="#204D38" stroke-width="3" stroke-linejoin="round"/>
+<!-- heavy lower jaw -->
+<path d="M78 41L115 41L112 56C104 61 91 60 81 53L76 47Z" fill="#316B4C" stroke="#204D38" stroke-width="3" stroke-linejoin="round"/>
+<path d="M80 44L112 44" stroke="#183A2C" stroke-width="2.5" stroke-linecap="round"/>
+<!-- prominent teeth -->
+<path d="M82 45L85 54L88 45L91 55L94 46L98 55L101 46L104 54L107 45L111 51" fill="#FFF5C7" stroke="#A78E48" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M78 25C87 20 99 21 108 25" stroke="#DCF3A1" stroke-width="3.2" stroke-linecap="round" opacity=".78"/>
+<circle cx="103" cy="23" r="3.7" fill="#1E3035"/><circle cx="104" cy="22" r="1.1" fill="white"/>
+<path d="M109 33L114 34" stroke="#2A6042" stroke-width="2.2" stroke-linecap="round"/>
+<!-- young scale marks, not dorsal plates -->
+<path d="M35 57l4-2m-6 9 4-2m7-18 4-2" stroke="#88C873" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+</svg>

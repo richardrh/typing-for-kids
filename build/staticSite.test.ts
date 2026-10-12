@@ -1,17 +1,21 @@
-import { afterEach, describe, expect, it } from 'vitest'
+// @vitest-environment jsdom
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { staticSite } from './staticSite'
 
 const originalEnv = { ...process.env }
+beforeEach(() => {
+  for (const key of ['BASE_PATH', 'VITE_ROUTER_MODE', 'SITE_URL', 'URL', 'CONTEXT']) delete process.env[key]
+})
 
 afterEach(() => {
   process.env = { ...originalEnv }
 })
 
-function transformRoot(): string {
+function transformRoot(html = '<html><head></head><body></body></html>', path = '/index.html'): string {
   const plugin = staticSite()
   const transform = plugin.transformIndexHtml
   if (!transform || typeof transform !== 'object' || !('handler' in transform)) throw new Error('unexpected transform hook shape')
-  return transform.handler('<html><head></head><body></body></html>', { path: '/index.html', filename: '/project/index.html' } as never) as string
+  return transform.handler(html, { path, filename: '/project/index.html' } as never) as string
 }
 
 describe('staticSite', () => {
@@ -68,5 +72,17 @@ describe('staticSite', () => {
       operatingSystem: 'Web',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     }))
+  })
+
+  it('keeps project-site canonical, sharing assets, and animal entry links inside the repository path', () => {
+    process.env.SITE_URL = 'https://reader.github.io'
+    process.env.BASE_PATH = '/typing-for-kids'
+    process.env.VITE_ROUTER_MODE = 'hash'
+    const html = transformRoot('<html><head></head><body><a id="home" href="%SITE_ROOT%">Home</a><a id="animal" href="%APP_URL%lessons/easy-animal-words?theme=tiger">Tiger</a></body></html>', '/typing-for-kids/index.html')
+    const document = new DOMParser().parseFromString(html, 'text/html')
+    expect(document.querySelector('#animal')!.getAttribute('href')).toBe('/typing-for-kids/app/#/lessons/easy-animal-words?theme=tiger')
+    expect(document.querySelector('#home')!.getAttribute('href')).toBe('/typing-for-kids/')
+    expect(document.querySelector<HTMLLinkElement>('link[rel="canonical"]')!.href).toBe('https://reader.github.io/typing-for-kids/')
+    expect(document.querySelector('meta[property="og:image"]')!.getAttribute('content')).toBe('https://reader.github.io/typing-for-kids/social-card.png')
   })
 })
